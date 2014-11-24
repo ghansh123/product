@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppDeviseScaffoldBootstrap</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |key, value| %>
+  <font color='green'><p><%= value %></P></font>
+<%end%>
+<%="login by Email:"+ current_user.email +"at now()" %>
+<%= yield %>
+<hr/>
+<right><%= link_to 'sign_out',destroy_user_session_path %></right>
+</body>
+</html>
